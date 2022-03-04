@@ -1,0 +1,12 @@
+version: '3.6'
+services:
+  loadblancer:
+    image: nginx
+    volumes:
+      - /Users/vadlakirankumar/Downloads/DevOps-Assignment/proxy/proxy.conf:/etc/nginx/conf.d/proxy.conf:ro
+    environment:
+      - SERVICE_NAME=load-balancer
+      - SERVICE_IGNORE=true
+    ports:
+      - "80:80"
+
